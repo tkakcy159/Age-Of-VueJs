@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        .hide {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
@@ -12,12 +17,34 @@
         <router-link to="/main">main</router-link>
         <router-view></router-view>
     </div>
+    
+    <!-- html 요소를 읽어오면 tempate에 넣어줄 수 있다!!! -->
+    <jwkim-template class="hide">
+        <div id="template1">
+            <div>
+                Your Name : <input type="text" id="temp1_name" value=""><br>
+                <button v-on:click="sendName">submit</button>
+            </div>
+        </div>
+    </jwkim-template>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
     <script>
+        var template1 = document.querySelector('#template1');
+
         var LoginComponent = {
-            template: '<div><form action="main"><input type="text" ><br><input type="password" ><br><input type="submit" value="login"></form></div>'
+            template: template1.innerHTML,
+            methods: {
+                sendName: function() {
+                    this.name = document.getElementById('temp1_name').value;
+
+                    this.$emit('submit', this.name);
+                }
+            },
+            data: {
+                name: ''
+            }
         }
         var MainComponent = {
             template: '<div>Main</div>'
@@ -43,6 +70,9 @@
         new Vue({
             el: '#app',
             router: Router,
+            data: {
+                name: ''
+            }
         });
     </script>
 </body>
