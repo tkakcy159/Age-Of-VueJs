@@ -11,6 +11,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
+        // https://kr.vuejs.org/v2/guide/instance.html#라이프사이클-다이어그램 - 참고
+        // https://kr.vuejs.org/v2/guide/computed.html - 참고
         var vm = new Vue({
             el: '#app',
             data: {
@@ -26,6 +28,15 @@
                 
             }
         });
+
+        // new Vue({
+        //     el:'',           인스턴스가 그려지는 화면의 시작점(특정 HTML태그)
+        //     template:'',     화면에 표시할 요소(HTML, CSS 등)
+        //     data:'',         뷰 화면의 반응성(Reactivity)가 반영된 데이터 속성 = 동적 데이터 바인딩
+        //     methods:'',      화면의 동작과 이벤트 로직을 제어하는 메서드
+        //     created:'',      Vue의 라이프 사이클과 관련된 속성
+        //     watch:'',        data에 정의한 속성이 변화했을 때 추가 동작을 수행할 수 있게 정의하는
+        // });
     </script>
 </body>
 </html>

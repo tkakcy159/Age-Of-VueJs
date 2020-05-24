@@ -19,14 +19,14 @@
     </div>
     
     <!-- html 요소를 읽어오면 tempate에 넣어줄 수 있다!!! -->
-    <jwkim-template class="hide">
-        <div id="template1">
-            <div>
-                Your Name : <input type="text" id="temp1_name" value=""><br>
-                <button v-on:click="sendName">submit</button>
-            </div>
+    <div id="template1" class="hide">
+        <div>
+            Your Name : <input type="text" id="temp1_name" value=""><br>
+            <button v-on:click="sendName">submit</button>
         </div>
-    </jwkim-template>
+    </div>
+    
+    <!-- https://joshua1988.github.io/web-development/vuejs/vue-router-navigation-guards/ -->
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
@@ -61,7 +61,7 @@
                 },
                 {
                     path: '/main',
-                    component: MainComponent
+                    component: MainComponent,
                 },
             ],
             mode: 'history'

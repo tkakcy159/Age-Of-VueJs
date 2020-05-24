@@ -12,6 +12,7 @@
         var div = document.querySelector('#app');
         var viewModel = {};
 
+        // viewmodel의 str값을 변경할때마다, div안의 text가 변경됨.. (Vue에서 ViewModel의 역할)
         (function() {
             function init() {
                 Object.defineProperty(viewModel, 'str', {
