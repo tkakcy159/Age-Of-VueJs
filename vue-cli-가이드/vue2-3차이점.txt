@@ -1,0 +1,17 @@
+[Vue CLI 2.x]
+vue init '프로젝트 유형' '프로젝트 위치'
+vue init webpack-simple '프로젝트 위치'
+=> 특정 github repository에서 webpack-simple 이라는 템플릿 프로젝트를 받는것임
+
+[Vue CLI 3.x]
+vue create '프로젝트 위치'
+
+# 강의 명령어 순서
+
+1. 프로젝트 생성
+vue create vue-cli-jwkim
+
+2. 프로젝트로 이동하여 실행해보기
+cd vue-cli-jwkim
+npm run serve
+
