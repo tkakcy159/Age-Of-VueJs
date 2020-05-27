@@ -1,35 +1,31 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <Hello-World msg="Welcome to Your Vue.js App"></Hello-World>
-    <!-- 컴포넌트 네이밍 컨벤션들 -->
-    <!-- 
-      <hello-world></hello-world> => 이 방법이 권장된다고 함(VSCode에서 파일 바로가기 지원하는 네이밍 컨벤션)
-      <HelloWorld></HelloWorld>
-      <HelloWorld/>
-    -->
-
+  <div>
+    <app-header 
+      v-bind:msg="str"
+      v-on:renew="renewString"></app-header>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AppHeader from './components/AppHeader.vue'
 
 export default {
-  name: 'App',
+  data: function() {
+    return {
+      str: 'Header'
+    }
+  },
   components: {
-    'Hello-World': HelloWorld
+    'app-header': AppHeader
+  },
+  methods: {
+    renewString: function() {
+      this.str='hi';
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
